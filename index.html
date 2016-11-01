@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebRTC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+
+  <body>
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="title">WebRTC</h1>
+           <div class="sala">Sala: <span id="url"></span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div id="videos">
+            <video id="localVideo" autoplay muted></video>
+            <video id="remoteVideo" autoplay></video>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  	<script src="js/lib/adapter.js"></script>
+    <script src="js/lib/socket.io-1.4.5.js"></script>
+  	<script src="js/main.js"></script>
+
+  </body>
+
+</html>

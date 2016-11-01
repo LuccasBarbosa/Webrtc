@@ -1,0 +1,6 @@
+*{margin: 0; padding: 0;}
+body{background-color: rgba(0,0,0,.5);}
+.title{color: #FFF; text-align: center;}
+.sala{color: #FFF;font-size: 16px; text-align: left; margin-bottom: 20px;}
+#localVideo{width: 100%;}
+#remoteVideo{position: absolute;right: 20px;top: 20px;width: 200px;}
