@@ -28,27 +28,6 @@ var room;
 var url_atual = window.location.href;
 document.querySelector('#url').innerHTML = url_atual;
 
-function queryString(parameter) {  
-      var loc = location.search.substring(1, location.search.length);   
-      var param_value = false;   
-      var params = loc.split("&");
-      var i;   
-      for (i=0; i<params.length;i++) {   
-          var param_name = params[i].substring(0,params[i].indexOf('='));   
-          if (param_name == parameter) {                                          
-              param_value = params[i].substring(params[i].indexOf('=')+1)   
-          }   
-      }   
-      if (param_value) {   
-          return param_value;   
-      }   
-      else {   
-          return false;   
-      }   
-}
-
-var variavel = queryString("minhaVariavel");
-
 var socket = io.connect();
 
 if (room !== '') {
