@@ -33,18 +33,16 @@ function queryString(parameter) {
       var param_value = false;   
       var params = loc.split("&");
       var i;   
-      for (i=0; i<params.length;i++) {   
-          var param_name = params[i].substring(0,params[i].indexOf('='));   
-          if (param_name == parameter) {                                          
-              param_value = params[i].substring(params[i].indexOf('=')+1)   
-          }   
-      }   
-      if (param_value) {   
+      params.forEach(function(el, i) {
+        var param_name = el.substring(0,el.indexOf('='));   
+        if (param_name == parameter) {                                          
+            param_value = el.substring(el.indexOf('=')+1)   
+        }   
+      });
+  
+      if (param_value)   
           return param_value;   
-      }   
-      else {   
-          return false;   
-      }   
+      return false;  
 }
 
 var variavel = queryString("minhaVariavel");
