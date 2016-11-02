@@ -317,7 +317,16 @@ function preferOpus(sdp) {
       break;
     }
   }
-
+   sdpLines.forEach(function(el, i) {
+    if (el.search('opus/48000') !== -1) {
+      var opusPayload = extractSdp(el, /:(\d+) opus\/48000/i);
+      if (opusPayload) {
+        sdpLines[mLineIndex] = setDefaultCodec(sdpLines[mLineIndex], opusPayload);
+      }
+      break;
+    }
+   }); 
+   
   // Remove CN in m line and sdp.
   sdpLines = removeCN(sdpLines, mLineIndex);
 
