@@ -286,16 +286,6 @@ function preferOpus(sdp) {
   }
 
   // If Opus is available, set it as the default in m line.
-  for (i = 0; i < sdpLines.length; i++) {
-    if (sdpLines[i].search('opus/48000') !== -1) {
-      var opusPayload = extractSdp(sdpLines[i], /:(\d+) opus\/48000/i);
-      if (opusPayload) {
-        sdpLines[mLineIndex] = setDefaultCodec(sdpLines[mLineIndex],
-          opusPayload);
-      }
-      break;
-    }
-  }
    sdpLines.forEach(function(el, i) {
     if (el.search('opus/48000') !== -1) {
       var opusPayload = extractSdp(el, /:(\d+) opus\/48000/i);
